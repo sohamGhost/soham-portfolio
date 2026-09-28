@@ -1,0 +1,2 @@
+Replace this file by adding your real photo as `avatar.jpg` in this /public folder.
+Recommended: square image, at least 500x500px.
