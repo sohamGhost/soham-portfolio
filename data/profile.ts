@@ -6,8 +6,9 @@ export const profile = {
   phone: "+91 98749 69948",
   linkedin: "https://linkedin.com/in/soham-ghosal-889a13172",
   github: "https://github.com/sohamGhost",
-  avatar: "/30C5B487-416E-42AF-8BD9-7B76BE2DE79B.png",
+  avatar: "/avatar.png",
   resume: "/Soham_Ghosal_Resume_Generic.pdf",
+  quote: "If it can be automated without a human in the loop, it should be.",
   bio: `I'm a Java Full Stack Developer and Agentic AI Engineer with ~4 years of experience building production-grade, cloud-native systems for global fintech clients. I work across the full stack — from Spring Boot microservices and event-driven Kafka architecture to Angular frontends and GenAI pipelines using LangChain, RAG, and the Anthropic Claude API. I've shipped systems that process millions of financial transactions, deployed AI assistants that went from POC to enterprise sign-off, and built serverless agents that run entirely without human intervention. I enjoy solving hard problems at the intersection of backend engineering and intelligent automation. Feel free to connect with me through my socials.`,
   taglines: [
     "Java Full Stack Developer",
@@ -155,6 +156,45 @@ export const skills: { category: string; color: "accent" | "accent2" | "success"
     category: "Domain",
     color: "success",
     items: ["FinTech", "Payment Processing", "Merchant Reporting", "Settlement & Reconciliation", "Incident Analysis", "Agile/Scrum"],
+  },
+];
+
+export type Achievement = {
+  icon: "Zap" | "Rocket" | "Network" | "Users" | "ShieldCheck" | "Award";
+  title: string;
+  description: string;
+};
+
+export const achievements: Achievement[] = [
+  {
+    icon: "Zap",
+    title: "80% Faster Reporting",
+    description: "Multi-layer aggregation cut report generation from 5 min to under 1 min on million-row datasets.",
+  },
+  {
+    icon: "Rocket",
+    title: "Enterprise RAG Rollout",
+    description: "Production RAG assistant approved by client leadership for org-wide deployment.",
+  },
+  {
+    icon: "Network",
+    title: "Zero-Touch Kafka SSO",
+    description: "Event-driven identity service reduced manual provisioning to near-zero.",
+  },
+  {
+    icon: "Users",
+    title: "Led 10-Engineer Migration",
+    description: "Directed AccuRev → GitHub migration, branch strategy, and PR workflows.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "PCI-DSS Compliant CI/CD",
+    description: "Built SonarQube-gated pipelines meeting PCI-DSS for live payment platforms.",
+  },
+  {
+    icon: "Award",
+    title: "Internal Innovation Recognition",
+    description: "Aggregation architecture recognized by Worldpay senior leadership.",
   },
 ];
 

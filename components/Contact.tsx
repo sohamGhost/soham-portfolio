@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import { profile } from "@/data/profile";
 import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeading } from "@/components/SectionHeading";
 
 const details = [
   { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
@@ -14,18 +15,11 @@ const details = [
 export function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-2xl px-6 py-24">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-4 text-center text-3xl font-bold"
-      >
-        Get In Touch
-      </motion.h2>
-      <p className="mb-10 text-center text-foreground/60">
-        Have an opportunity or just want to connect? Reach out directly — I&apos;d love to hear from you.
-      </p>
+      <SectionHeading
+        title="Get In Touch"
+        subtitle="Have an opportunity or just want to connect? Reach out directly — I'd love to hear from you."
+        align="center"
+      />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -24,6 +24,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         mono: ["var(--font-jetbrains)"],
+        display: ["var(--font-space-grotesk)"],
       },
       keyframes: {
         "mesh-float": {

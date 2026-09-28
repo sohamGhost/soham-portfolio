@@ -4,20 +4,12 @@ import { motion } from "framer-motion";
 import { Building2 } from "lucide-react";
 import { experience } from "@/data/profile";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export function Experience() {
   return (
     <section id="experience" className="mx-auto max-w-4xl px-6 py-24">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-14 text-center text-3xl font-bold"
-      >
-        Experience
-      </motion.h2>
+      <SectionHeading title="Experience" />
 
       {experience.map((job) => (
         <div key={job.company} className="mb-10">

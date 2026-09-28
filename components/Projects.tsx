@@ -5,19 +5,12 @@ import { Github } from "lucide-react";
 import { projects, profile } from "@/data/profile";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-14 text-center text-3xl font-bold"
-      >
-        Projects
-      </motion.h2>
+      <SectionHeading title="Projects" />
 
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project, i) => (

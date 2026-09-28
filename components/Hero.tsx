@@ -3,7 +3,19 @@
 import { useEffect, useState } from "react";
 import { motion, useInView, useMotionValue, animate } from "framer-motion";
 import { useRef } from "react";
-import { Github, Linkedin, Download, ArrowRight } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Download,
+  ArrowRight,
+  ChevronDown,
+  Code2,
+  Database,
+  Terminal,
+  Binary,
+  Braces,
+  Share2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile, heroStats } from "@/data/profile";
 
@@ -66,13 +78,27 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
   );
 }
 
+const doodles = [
+  { Icon: Code2, className: "left-[8%] top-[18%] h-9 w-9 -rotate-6" },
+  { Icon: Database, className: "left-[46%] top-[10%] h-8 w-8 rotate-3" },
+  { Icon: Terminal, className: "left-[4%] top-[52%] h-7 w-7 rotate-6" },
+  { Icon: Share2, className: "right-[6%] top-[22%] h-9 w-9 -rotate-3" },
+  { Icon: Braces, className: "left-[10%] bottom-[10%] h-8 w-8 rotate-3" },
+  { Icon: Binary, className: "right-[10%] bottom-[16%] h-8 w-8 -rotate-6" },
+];
+
 export function Hero() {
   const typed = useTypewriter(profile.taglines);
+  const [firstName, ...rest] = profile.name.split(" ");
+  const lastName = rest.join(" ");
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-24">
       <div className="bg-grid pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block">
+        {doodles.map(({ Icon, className }, i) => (
+          <Icon key={i} className={`absolute text-foreground/10 ${className}`} />
+        ))}
         <motion.div
           className="mesh-orb h-72 w-72 bg-accent left-[10%] top-[15%]"
           animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
@@ -91,32 +117,42 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-mono text-sm text-accent"
+          className="mx-auto inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 font-mono text-xs text-foreground/70"
         >
-          {profile.location}
-        </motion.p>
+          <span className="h-1.5 w-1.5 rounded-full bg-success" />
+          Open to opportunities · {profile.location}
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-3 text-4xl font-bold tracking-tight text-balance md:text-6xl"
+          className="mt-6 font-display text-5xl font-bold tracking-tight text-balance md:text-7xl"
         >
-          {profile.name}
+          {firstName} <span className="text-gradient">{lastName}</span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-4 font-mono text-base text-foreground/50 md:text-lg"
+        >
+          {profile.quote}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 h-8 font-mono text-lg text-foreground/70 md:text-xl"
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-3 h-8 font-mono text-lg text-accent md:text-xl"
         >
           {typed}
-          <span className="animate-pulse text-accent">|</span>
+          <span className="animate-pulse">|</span>
         </motion.div>
 
         <motion.p
@@ -181,6 +217,15 @@ export function Hero() {
           ))}
         </motion.div>
       </div>
+
+      <motion.div
+        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 font-mono text-[11px] uppercase tracking-widest text-foreground/40"
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        Scroll
+        <ChevronDown size={14} />
+      </motion.div>
     </section>
   );
 }

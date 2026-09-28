@@ -3,19 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-24">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-12 text-center text-3xl font-bold"
-      >
-        About Me
-      </motion.h2>
+      <SectionHeading title="About Me" />
 
       <div className="grid items-center gap-10 md:grid-cols-[280px_1fr]">
         <motion.div

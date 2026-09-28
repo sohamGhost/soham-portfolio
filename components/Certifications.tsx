@@ -4,19 +4,12 @@ import { motion } from "framer-motion";
 import { Award, GraduationCap } from "lucide-react";
 import { certifications, education } from "@/data/profile";
 import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export function Certifications() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-24">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-14 text-center text-3xl font-bold"
-      >
-        Education & Certifications
-      </motion.h2>
+    <section id="education" className="mx-auto max-w-5xl px-6 py-24">
+      <SectionHeading title="Education & Certifications" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
