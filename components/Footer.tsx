@@ -1,21 +1,23 @@
-import { Github, Linkedin } from "lucide-react";
+"use client";
+
 import { profile } from "@/data/profile";
+
+const role = profile.title.split("|")[0].trim();
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+    <footer className="border-t border-border py-6">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 sm:flex-row">
         <p className="text-sm text-foreground/50">
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js & Tailwind.
+          © {new Date().getFullYear()} {profile.name} · {role}
         </p>
-        <div className="flex gap-4">
-          <a href={profile.github} target="_blank" rel="noreferrer" className="text-foreground/50 hover:text-accent">
-            <Github size={18} />
-          </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-foreground/50 hover:text-accent">
-            <Linkedin size={18} />
-          </a>
-        </div>
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-sm text-accent transition-colors hover:text-accent2"
+        >
+          Back to top ↑
+        </button>
       </div>
     </footer>
   );

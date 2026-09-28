@@ -19,13 +19,19 @@ export function Certifications() {
         className="mb-10"
       >
         <Card>
-          <CardContent className="flex items-center gap-4">
-            <GraduationCap className="text-accent" size={28} />
-            <div>
-              <h3 className="font-semibold">{education.degree}</h3>
-              <p className="text-sm text-foreground/60">
-                {education.school} · {education.period} · CGPA: {education.cgpa}
-              </p>
+          <CardContent className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <GraduationCap size={22} />
+              </div>
+              <div>
+                <h3 className="font-semibold">{education.degree}</h3>
+                <p className="text-sm text-foreground/60">{education.school}</p>
+              </div>
+            </div>
+            <div className="flex-shrink-0 text-right">
+              <p className="font-display text-xl font-bold text-accent">{education.cgpa} CGPA</p>
+              <p className="mt-1 text-xs text-foreground/50">{education.period}</p>
             </div>
           </CardContent>
         </Card>
@@ -39,11 +45,13 @@ export function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.05 }}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ y: -4 }}
           >
-            <Card className="h-full border-success/20">
+            <Card className="h-full">
               <CardContent className="flex items-start gap-3">
-                <Award className="mt-0.5 flex-shrink-0 text-success" size={20} />
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-success/10 text-success">
+                  <Award size={17} />
+                </div>
                 <div>
                   <p className="text-sm font-medium leading-snug">{cert.name}</p>
                   <p className="mt-1 text-xs text-foreground/50">{cert.issuer}</p>
