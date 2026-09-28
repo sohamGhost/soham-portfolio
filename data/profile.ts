@@ -8,7 +8,7 @@ export const profile = {
   github: "https://github.com/sohamGhost",
   avatar: "/avatar.png",
   resume: "/Soham_Ghosal_Resume_Generic.pdf",
-  quote: "If it can be automated without a human in the loop, it should be.",
+  quote: "Engineering resilient fintech systems — and the autonomous agents that run them.",
   bio: `I'm a Java Full Stack Developer and Agentic AI Engineer with ~4 years of experience building production-grade, cloud-native systems for global fintech clients. I work across the full stack — from Spring Boot microservices and event-driven Kafka architecture to Angular frontends and GenAI pipelines using LangChain, RAG, and the Anthropic Claude API. I've shipped systems that process millions of financial transactions, deployed AI assistants that went from POC to enterprise sign-off, and built serverless agents that run entirely without human intervention. I enjoy solving hard problems at the intersection of backend engineering and intelligent automation. Feel free to connect with me through my socials.`,
   taglines: [
     "Java Full Stack Developer",

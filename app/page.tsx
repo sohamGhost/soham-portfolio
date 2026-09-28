@@ -21,9 +21,13 @@ export default function Home() {
         <Projects />
         <Skills />
         <Certifications />
-        <Contact />
+        <div className="surface-band">
+          <Contact />
+        </div>
       </main>
-      <Footer />
+      <div className="surface-band">
+        <Footer />
+      </div>
     </>
   );
 }
